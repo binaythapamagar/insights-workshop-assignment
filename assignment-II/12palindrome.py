@@ -10,4 +10,5 @@ class Solution:
         
 if __name__ == "__main__":
     solution = Solution()
-    print(f"The word PAAP is Palindrom : {solution.is_Palindrom('PAAP')}")
+    word = input('Enter a word to check palindrom :')
+    print(f"The word {word} is Palindrom : {solution.is_Palindrom(word)}")
