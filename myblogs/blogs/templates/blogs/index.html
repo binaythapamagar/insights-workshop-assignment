@@ -1,0 +1,17 @@
+{% extends 'myblogs/main.html' %}
+
+{% block content%}
+<div class="row" style="margin-top: 10px;">
+    {% for blog in blogs %}
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{blog.title}} <tr><span class="badge badge-primary">{{blog.author_id}}</span></tr></h5>
+            <p class="card-text"> {{ blog.body|slice:180 }}....</p>
+            <a href="{% url 'blog_detail' blog.id %}" class="btn btn-primary pull-right">View More</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content%}
