@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class DateInformation(models.Model):
-    created_at = models.DateTimeField('Published date')
-    updated_at = models.DateTimeField('Last updated')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 class Author(models.Model):
     name = models.CharField(max_length=300)
