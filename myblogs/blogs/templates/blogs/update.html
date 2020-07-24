@@ -1,0 +1,12 @@
+{% extends 'myblogs/main.html' %}
+
+{% block content %}
+
+<h3>Update Blog</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Update">
+    </form>
+
+{% endblock %}

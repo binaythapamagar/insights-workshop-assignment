@@ -26,7 +26,24 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'all_blogs' %}">Blogs</a>
             </li>
-  
+
+            {% if request.user.is_authenticated %}
+              <li class="nav-item pull-right">
+                <a class="nav-link pull-right" href="{% url 'blog_create' %}">Write Blog</a>
+              </li>
+              <li class="nav-item pull-right">
+                <a class="nav-link pull-right" href="{% url 'my_blogs' %}">My Blog</a>
+              </li>
+              <li class="nav-item pull-right">
+                <a class="nav-link pull-right" href="{% url 'logout' %}">Log out</a>
+              </li>
+            {% else %}
+              <li class="nav-item pull-right">
+                <a class="nav-link pull-right" href="{% url 'login' %}">Login</a>
+              </li>    
+            {% endif %}
+              
+            
         </div>
       </nav>
 
